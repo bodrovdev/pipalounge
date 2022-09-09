@@ -1,2 +1,3 @@
 # pipalounge
-🍕 restaurant landing page
+🍕 restaurant landing page \
+https://bodrovdev.github.io/pipalounge/
