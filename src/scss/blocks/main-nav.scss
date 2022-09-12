@@ -1,10 +1,20 @@
 @use "../mixins";
 
 .main-nav {
-  width: 100%;
-  height: 175px;
+  position: relative;
 
-  padding-top: 40px;
+  width: 100%;
+  height: 100%;
+
+  padding: 40px 0 0 0;
+
+  @include mixins.respond-to(mobileOnly) {
+    padding: 10px 0 0 0;
+  }
+
+  @include mixins.respond-to(tabletOnly) {
+    padding: 10px 0 0 0;
+  }
 
   &__container {
     display: flex;
@@ -12,14 +22,108 @@
     justify-content: space-between;
 
     color: white;
-  }
 
-  &__burger {
-    display: none;
+    @include mixins.respond-to(mobileOnly) {
+      align-items: center;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      align-items: center;
+    }
   }
 
   &__mobile-menu {
     display: flex;
+
+    @include mixins.respond-to(mobileOnly) {
+      position: absolute;
+      top: 0;
+      left: -100%;
+
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--color-asphalt);
+
+      transition: 0.5s;
+
+      padding: 0 0 0 5%;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      position: absolute;
+      top: 0;
+      left: -100%;
+
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--color-asphalt);
+
+      transition: 0.5s;
+
+      padding: 0 0 0 5%;
+    }
+  }
+
+  &__mobile-menu--active {
+    @include mixins.respond-to(mobileOnly) {
+      left: 0;
+
+      transition: all 0.5s;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      left: 0;
+
+      transition: all 0.5s;
+    }
+  }
+
+  &__menu-item {
+    z-index: 1;
+
+    @include mixins.respond-to(mobileOnly) {
+      width: 100%;
+
+      margin: 0 0 20px 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      width: 100%;
+
+      margin: 0 0 20px 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    @include mixins.respond-to(desktopS) {
+      margin: 0;
+
+      &:first-child {
+        margin: 0 50px 0 0;
+      }
+    }
+
+    @include mixins.respond-to(desktopM) {
+      margin: 0;
+
+      &:first-child {
+        margin: 0 150px 0 0;
+      }
+    }
   }
 
   &__logo-block {
@@ -44,13 +148,23 @@
       opacity: 0;
 
       transition: 1s;
+
+      @include mixins.respond-to(mobileOnly) {
+        display: none;
+      }
+
+      @include mixins.respond-to(tabletOnly) {
+        display: none;
+      }
     }
 
-    &:hover::before {
-      transform: rotate(360deg);
-      opacity: 1;
-
-      transition: all 1s;
+    @include mixins.respond-to(tablet) {
+      &:hover::before {
+        transform: rotate(360deg);
+        opacity: 1;
+  
+        transition: all 1s;
+      }
     }
 
     &:focus-visible {
@@ -63,27 +177,27 @@
     }
   }
 
-  &__nav-list {
-    display: flex;
-  }
-
-  &__menu-item {
-    z-index: 1;
-
-    @include mixins.respond-to(desktopS) {
-      margin: 0;
-
-      &:first-child {
-        margin: 0 50px 0 0;
-      }
+  &__logo-img {
+    @include mixins.respond-to(mobileOnly) {
+      width: 80px;
+      height: auto;
     }
 
-    @include mixins.respond-to(desktopM) {
-      margin: 0;
+    @include mixins.respond-to(tabletOnly) {
+      width: 80px;
+      height: auto;
+    }
+  }
 
-      &:first-child {
-        margin: 0 150px 0 0;
-      }
+  &__nav-list {
+    display: flex;
+
+    @include mixins.respond-to(mobileOnly) {
+      display: none;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      display: none;
     }
   }
 
@@ -112,6 +226,7 @@
 
     display: inline-block;
 
+    vertical-align: top;
     user-select: none;
     overflow: hidden;
 
@@ -138,9 +253,25 @@
       transition: 0.1s;
 
       z-index: -1;
+
+      @include mixins.respond-to(mobileOnly) {
+        background-color: var(--color-white);
+      }
+
+      @include mixins.respond-to(tabletOnly) {
+        background-color: var(--color-white);
+      }
     }
 
-    @include mixins.respond-to(tablet) {
+    @include mixins.respond-to(mobileOnly) {
+      width: 100%;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      width: 100%;
+    }
+
+    @include mixins.respond-to(desktopS) {
       &:hover::before {
         left: 0;
         transition: all 0.3s;
@@ -173,5 +304,211 @@
 
   &__menu-item--desktop-hidden {
     display: none;
+
+    @include mixins.respond-to(mobileOnly) {
+      display: inline-block;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      display: inline-block;
+    }
+  }
+
+  &__burger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    height: 45px;
+    width: 45px;
+    border: 1px solid var(--color-white);
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    z-index: 5;
+
+    @include mixins.respond-to(mobileOnly) {
+      display: flex;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      display: flex;
+    }
+  }
+
+  &__burger-line {
+    position: relative;
+
+    width: 27px;
+    height: 2px;
+    background-color: var(--color-white);
+
+    transition: 0.3s;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: 27px;
+      height: 2px;
+      background-color: var(--color-white);
+
+      animation-duration: 0.3s;
+      animation-name: burger_before_default;
+      animation-fill-mode: forwards;
+
+      transition: all 0.3s;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: 27px;
+      height: 2px;
+      background-color: var(--color-white);
+
+      animation-duration: 0.3s;
+      animation-name: burger_after_default;
+      animation-fill-mode: forwards;
+
+      transition: all 0.3s;
+    }
+  }
+
+  &__burger--active .main-nav__burger-line::before {
+    animation-duration: 0.3s;
+    animation-name: burger_before;
+    animation-fill-mode: forwards;
+  }
+
+  &__burger--active .main-nav__burger-line::after {
+    animation-duration: 0.3s;
+    animation-name: burger_after;
+    animation-fill-mode: forwards;
+
+    transition: all 0.3s;
+  }
+
+  &__burger--active .main-nav__burger-line {
+    background-color: transparent;
+
+    transition-delay: 0.3s;
+    transition: all 0.1s;
+  }
+
+  &__burger:hover {
+    border: 1px solid var(--color-geebung);
+
+    transition: all 0.3s;
+  }
+
+  &__burger:hover .main-nav__burger-line {
+    background-color: var(--color-geebung);
+
+    transition: all 0.3s;
+  }
+
+  &__burger:hover .main-nav__burger-line::before {
+    background-color: var(--color-geebung);
+
+    transition: all 0.3s;
+  }
+
+  &__burger:hover .main-nav__burger-line::after {
+    background-color: var(--color-geebung);
+
+    transition: all 0.3s;
+  }
+
+  &__burger--active:hover .main-nav__burger-line {
+    background-color: transparent;
+  }
+}
+
+@keyframes burger_before_default {
+  from {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  50% {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  to {
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes burger_before {
+  from {
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  50% {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  100% {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+  }
+}
+
+@keyframes burger_after_default {
+  from {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+  }
+
+  50% {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  to {
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes burger_after {
+  from {
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  50% {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  100% {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
   }
 }

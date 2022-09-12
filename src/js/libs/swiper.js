@@ -7,4 +7,6 @@ const heading__slider = new Swiper('.heading__slider', {
   autoplay: {
     delay: 4000,
   },
+  noSwiping: true,
+  noSwipingClass: '.swiper-slide',
 });
