@@ -3,3 +3,10 @@
 
 	margin: 0 auto;
 }
+
+@media(min-width: '1800px') {
+	.base-container {
+		width: 77%;
+		max-width: 1480px;
+	}
+}

@@ -7,14 +7,56 @@
 
 <body>
 	<header class="page-header">
-		<nav class="main-nav"></nav>
+		<nav class="main-nav">
+			<div class="main-nav__container base-container">
+				<ul class="main-nav__mobile-menu base-list">
+					<li class="main-nav__menu-item">
+						<a class="main-nav__menu-link base-link" href="#">о ресторане</a>
+					</li>
+					<li class="main-nav__menu-item">
+						<a class="main-nav__menu-link base-link" href="#">меню</a>
+					</li>
+					<li class="main-nav__menu-item main-nav__menu-item--desktop-hidden">
+						<a class="main-nav__menu-link base-link" href="#">галерея</a>
+					</li>
+					<li class="main-nav__menu-item main-nav__menu-item--desktop-hidden">
+						<a class="main-nav__menu-link base-link" href="#">контакты</a>
+					</li>
+				</ul>
+				<a class="main-nav__logo-block base-link" href="#">
+					<figure class="main-nav__logo-image base-figure">
+						<img class="main-nav__logo-img" src="img/image/design/logo.svg" width="141" height="174" alt="website logo">
+					</figure>
+				</a>
+				<ul class="main-nav__nav-list base-list">
+					<li class="main-nav__nav-item main-nav__menu-item--desktop-hidden">
+						<a class="main-nav__menu-link base-link" href="#">о ресторане</a>
+					</li>
+					<li class="main-nav__nav-item main-nav__menu-item--desktop-hidden">
+						<a class="main-nav__menu-link base-link" href="#">меню</a>
+					</li>
+					<li class="main-nav__nav-item">
+						<a class="main-nav__menu-link base-link" href="#">галерея</a>
+					</li>
+					<li class="main-nav__nav-item">
+						<a class="main-nav__menu-link base-link" href="#">контакты</a>
+					</li>
+				</ul>
+				<button class="main-nav__burger base-button">
+					<span class="main-nav__burger-line"></span>
+				</button>
+			</div>
+		</nav>
 	</header>
 	<main class="page-content">
 		<div class="heading">
 			<div class="heading__slider swiper">
 				<div class="heading__slider-wrapper swiper-wrapper">
 					<div class="heading__slider-item swiper-slide">
-						<img class="heading__slider-img" src="img/image/design/heading-slide-1.jpg" alt="Слайд-1">
+						<img class="heading__slider-img" src="img/image/design/heading-slide-1.jpg" alt="slide-1">
+					</div>
+					<div class="heading__slider-item swiper-slide">
+						<img class="heading__slider-img" src="img/image/design/heading-slide-2.jpg" alt="slide-2">
 					</div>
 				</div>
 			</div>
@@ -24,7 +66,11 @@
 					<span class="order-button__text">Забронировать</span>
 				</button>
 			</div>
-			button.heading__move-button
+			<button class="heading__move-button move-button base-button">
+				<svg class="move-button__arrow-icon" width="15" height="63" alt="">
+					<use href="img/icon/sprite.svg#arrow-icon"></use>
+				</svg>
+			</button>
 		</div>
 	</main>
 	<footer class="page-footer"></footer>
