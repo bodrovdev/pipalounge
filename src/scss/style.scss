@@ -20,10 +20,12 @@
 @use 'global/fonts';
 
 //БЭМ блоки
+@use 'blocks/order-button';
+@use 'blocks/move-button';
+
 @use 'blocks/page-header';
 @use 'blocks/page-content';
 @use 'blocks/page-footer';
 @use 'blocks/main-nav';
 @use 'blocks/heading';
-@use 'blocks/order-button';
-@use 'blocks/move-button';
+@use 'blocks/about';

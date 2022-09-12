@@ -5,12 +5,6 @@
 "title": "pipalounge"
 })
 
-<!-- <style>
-	.heading__slider-img {
-		transform: scale(1.5);
-	}
-</style> -->
-
 <body>
 	<header class="page-header">
 		<nav class="main-nav">
@@ -55,7 +49,7 @@
 		</nav>
 	</header>
 	<main class="page-content">
-		<div class="heading">
+		<section class="heading">
 			<div class="heading__slider swiper">
 				<div class="heading__slider-wrapper swiper-wrapper">
 					<div class="heading__slider-item swiper-slide">
@@ -77,7 +71,59 @@
 					</svg>
 				</button>
 			</div>
-		</div>
+		</section>
+
+		<section class="about">
+			<div class="about__container base-container">
+				<div class="about__subject">
+					<div class="about__subject-inner">
+						<h2>О ресторане</h2>
+						<p>
+							Pipa Lounge  — новое место для ценителей 
+							прекрасных видом города, комфорта и изысканной кухни. 
+							Из наших окон открывается живописный вид на городской ландшафт. 
+							Просторный зал нашего ресторана вмещает около 150 гостей, а 
+							ещё 220 могут расположиться на террасе, что делает Pipa Lounge, 
+							идеальным местом для проведения незабываемых мероприятий, 
+							торжеств и банкета, детского праздника или просто дружеской вечеринки.<br>
+							<br>
+							Открытый камин в центре зала поможет нашим гостям насладиться домашним уютом. 
+							Любителям активного отдыха мы предложим развлечения в летней зоне под открытым 
+							небом, где ваши встречи наполнятся роматическими впечатлениями.
+						</p>
+					</div>
+				</div>
+				<button class="about__move-button move-button base-button">
+					<svg class="move-button__arrow-icon" width="15" height="63" alt="">
+						<use href="img/icon/sprite.svg#arrow-icon"></use>
+					</svg>
+				</button>
+				<div class="about__menu">
+					<div class="about__menu-inner">
+						<h2>Меню Pipa Lounge</h2>
+						<p>Меню ресторана составляют блюда изысканной кухни, с 
+							большим выбором мясных блюд, приготовленных на открытом огне. 
+							В распоряжении наших поваров специальная гриль-печь для 
+							приготовления сочного ароматного мяса и настоящая печь для 
+							приготовления пиццы.
+						</p>
+						<div class="about__menu-links">
+							<a class="about__menu-link order-button base-link" href="#">
+								<span class="order-button__text">Основное меню</span>
+							</a>
+							<a class="about__menu-link order-button base-link" href="#">
+								<span class="order-button__text">Винная карта</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<button class="about__move-button move-button base-button">
+					<svg class="move-button__arrow-icon" width="15" height="63" alt="">
+						<use href="img/icon/sprite.svg#arrow-icon"></use>
+					</svg>
+				</button>
+			</div>
+		</section>
 	</main>
 	<footer class="page-footer"></footer>
 	<script src="./js/index.min.js"></script>
