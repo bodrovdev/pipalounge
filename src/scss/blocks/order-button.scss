@@ -1,0 +1,89 @@
+@use "../mixins";
+
+.order-button {
+  position: relative;
+
+  height: 55px;
+  background: var(--color-geebung);
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 8px 8px 45px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  user-select: none;
+
+  transition: 0.1s;
+
+  padding: 16px 0 17px 0;
+
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -110%;
+
+    width: 110%;
+    height: 110%;
+    background-color: var(--color-white);
+
+    transition: 0.3s;
+
+    z-index: -1;
+  }
+
+  @include mixins.respond-to(mobileOnly) {
+    &:active{
+      background-color: var(--color-raw-umber);
+      
+      transition: all 0.1s;
+    }
+  }
+
+  @include mixins.respond-to(tablet) {
+    &:hover::before {
+      left: 0;
+
+      transition: all 0.3s;
+    }
+
+    &:hover .order-button__text {
+      color: var(--color-black);
+
+      transition: all 0.3s;
+    }
+
+    &:active::before {
+      background-color: var(--color-raw-umber);
+      
+      transition: all 0.1s;
+    }
+
+    &:active .order-button__text {
+      color: var(--color-white);
+
+      transition: all 0.1s;
+    }
+
+    &:focus-visible {
+      border: none;
+      outline: 3px solid var(--color-geebung);
+      outline-offset: 5px;
+
+      transition: all 0.1s;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;    
+    letter-spacing: 0.03em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: var(--color-white);
+
+    transition: 0.3s;
+
+    z-index: 3;
+  }
+}

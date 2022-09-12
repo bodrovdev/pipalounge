@@ -1,0 +1,14 @@
+@use "../mixins";
+
+.move-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 135px;
+  background: rgb(156, 131, 100, 0.3);
+  border: 1px solid var(--color-dorado);
+  border-radius: 25px;
+  opacity: 0.3;
+}
