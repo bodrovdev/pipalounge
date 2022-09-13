@@ -1,59 +1,48 @@
-//Красивое появление текста и заголовка в блоке subject
-let subjectText = document.querySelectorAll('.about__subject-inner > p');
-let subjectTitle = document.querySelectorAll('.about__subject-inner > h2');
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
-let observerSubjectText = new IntersectionObserver(entries => {
-  subjectText.forEach((element) => {
-    element.classList.toggle( 'text-animated', entries[0].isIntersecting );
-  })
-});
+//Анимация для текста и заголовков в блоках описания
+let desc_text = document.querySelectorAll('.about__desc > p');
+let desc_title = document.querySelectorAll('.about__desc > h2');
+let desc_buttons = document.querySelectorAll('.about__desc > div');
 
-let observerSubjectTitle = new IntersectionObserver(entries => {
-  subjectTitle.forEach((element) => {
-    element.classList.toggle( 'title-animated', entries[0].isIntersecting );
-  })
-});
-
-subjectText.forEach((element) => {
-  observerSubjectText.observe(element);
+desc_text.forEach((element) => {
+  element.setAttribute('data-aos', 'fade-left');
+  element.setAttribute('data-aos-duration', '500');
 })
 
-subjectTitle.forEach((element) => {
-  observerSubjectTitle.observe(element);
+desc_title.forEach((element) => {
+  element.setAttribute('data-aos', 'fade-right');
+  element.setAttribute('data-aos-duration', '500');
 })
 
-//Красивое появление текста, заголовка и кнопок в блоке menu
-let menuText = document.querySelectorAll('.about__menu-inner > p');
-let menuTitle = document.querySelectorAll('.about__menu-inner > h2');
-let menuButtons = document.querySelectorAll('.about__menu-inner > div');
+desc_buttons.forEach((element) => {
+  element.setAttribute('data-aos', 'fade-up');
+  element.setAttribute('data-aos-duration', '500');
+})
 
-let observerMenuText = new IntersectionObserver(entries => {
-  menuText.forEach((element) => {
-    element.classList.toggle( 'text-animated', entries[0].isIntersecting );
+//Открытие и закрытие модального окна
+let modal = document.getElementById('modal');
+let openModal = document.querySelectorAll('#open-modal');
+let closeModal = document.getElementById('close-modal');
+
+openModal.forEach((element) => {
+  element.addEventListener('click', () => {
+    modal.classList.add('modal--opened');
+    disableBodyScroll(modal);
   })
-});
-
-let observerMenuTitle = new IntersectionObserver(entries => {
-  menuTitle.forEach((element) => {
-    element.classList.toggle( 'title-animated', entries[0].isIntersecting );
-  })
-});
-
-let observerMenuButtons = new IntersectionObserver(entries => {
-  menuButtons.forEach((element) => {
-    element.classList.toggle( 'buttons-animated', entries[0].isIntersecting );
-  })
-}); 
-
-menuText.forEach((element) => {
-  observerMenuText.observe(element);
 })
 
-menuTitle.forEach((element) => {
-  observerMenuTitle.observe(element);
+closeModal.addEventListener('click', () => {
+  modal.classList.remove('modal--opened');
+  enableBodyScroll(modal);
 })
 
-menuButtons.forEach((element) => {
-  observerMenuButtons.observe(element);
+modal.addEventListener('click', (e) => {
+  if (e.target !== e.currentTarget) {
+    return;
+  }
+  else {
+    modal.classList.remove('modal--opened');
+    enableBodyScroll(modal);
+  }
 })
-

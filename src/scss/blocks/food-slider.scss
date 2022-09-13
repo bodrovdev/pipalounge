@@ -1,0 +1,107 @@
+@use "../mixins";
+
+.food-slider {
+
+  padding: 70px 0 30px 0;
+
+  &__container {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  &__slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--color-merino);
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    z-index: 10;
+
+    &:hover {
+      background-color: var(--color-tea);
+
+      transition: all 0.3s;
+    }
+  }
+
+  &__slider-button--left {
+    left: 0;
+  }
+
+  &__slider-button--next {
+    right: 0;
+
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  &__slider {
+    max-width: 100%;
+  }
+
+  &__slider-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    height: 645px !important;
+    user-select: none;
+  }
+
+  &__slider-img {
+    width: 645px;
+    height: 645px;
+    object-fit: cover;
+    vertical-align: top;
+    user-select: none;
+  }
+
+  &__move-button {
+    align-self: center;
+
+    margin: 40px 0 0 0;
+  }
+}
+
+.food-slider .food-slider__slider-pagination {
+  position: absolute;
+  left: 0;
+  bottom: 70px;
+
+  width: fit-content;
+}
+
+.food-slider .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-dorado);
+
+  transition: 0.3s;
+
+  margin: 0 20px 0 0 !important;
+
+  &:last-child {
+    margin: 0 !important;
+  }
+}
+
+.food-slider .swiper-pagination-bullet-active {
+  background-color: var(--color-domino);
+
+  transition: all 0.3s;
+}
