@@ -5,9 +5,9 @@ const heading__slider = new Swiper('.heading__slider', {
   loop: true,
   effect: "fade",
   autoplay: {
-    delay: 6000,
+    delay: 3000,
   },
-  speed: 3000,
+  speed: 2000,
   noSwiping: true,
   noSwipingClass: '.swiper-slide',
 });

@@ -29,6 +29,13 @@
     transition: all 0.1s;
   }
 
+  &:focus-visible {
+    outline: 3px solid var(--color-geebung);
+    outline-offset: 5px;
+
+    transition: all 0.1s;
+  }
+
   &__arrow-icon {
     fill: var(--color-geebung);
     color: var(--color-geebung);
