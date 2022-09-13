@@ -20,6 +20,35 @@
 
 
 <body>
+	<section class="modal" id="modal">
+		<div class="modal__wrapper">
+			<div class="modal__inner">
+				<button class="modal__close" id="close-modal"></button>
+				<figure class="modal__inner-image base-figure">
+					<img class="modal__inner-img" src="img/image/design/modal-img.svg" width="50" height="70" alt="">
+				</figure>
+				<h2 class="modal__inner-title base-title">Бронирование</h2>
+				<form class="modal__inner-form" id="modalForm">
+					<label class="modal__inner-label">
+						<span class="modal__inner-desc">Ваше имя</span>
+						<input class="modal__inner-input" type="text" name="modalName" placeholder="Введите ваше имя">
+					</label>
+					<label class="modal__inner-label">
+						<span class="modal__inner-desc">Ваш телефон</span>
+						<input class="modal__inner-input" type="tel" name="modalPhone" placeholder="+7 (___)___-__-__">
+					</label>
+					<button class="modal__submit-button order-button base-button">
+						<span class="order-button__text">Забронировать</span>
+					</button>
+				</form>
+			</div>
+			<div class="modal__success">
+				<h2></h2>
+				<p></p>
+			</div>
+		</div>
+	</section>
+
 	<header class="page-header">
 		<nav class="main-nav">
 			<div class="main-nav__container base-container">
@@ -63,6 +92,7 @@
 		</nav>
 	</header>
 	<main class="page-content">
+
 		<section class="heading">
 			<div class="heading__slider swiper">
 				<div class="heading__slider-wrapper swiper-wrapper">
@@ -91,8 +121,8 @@
 			<div class="about__container base-container">
 				<div class="about__subject">
 					<div class="about__subject-inner about__desc">
-						<h2>О ресторане</h2>
-						<p>
+						<h2 data-aos-duration="10000">О ресторане</h2>
+						<p data-aos-duration="10000">
 							Pipa Lounge  — новое место для ценителей 
 							прекрасных видом города, комфорта и изысканной кухни. 
 							Из наших окон открывается живописный вид на городской ландшафт. 
@@ -138,6 +168,47 @@
 				</button>
 			</div>
 		</section>
+
+		<section class="food-slider">
+			<div class="food-slider__container base-container">
+				<div class="food-slider__slider swiper">
+					<button class="food-slider__slider-button food-slider__slider-button--prev base-button">
+						<svg class="food-slider__arrow-icon" width="18" height="10" alt="">
+							<use href="img/icon/sprite.svg#small-arrow-icon"></use>
+						</svg>
+					</button>
+					<button class="food-slider__slider-button food-slider__slider-button--next base-button">
+						<svg class="food-slider__arrow-icon" width="18" height="10" alt="">
+							<use href="img/icon/sprite.svg#small-arrow-icon"></use>
+						</svg>
+					</button>
+					<div class="food-slider__slider-wrapper swiper-wrapper">
+						<div class="food-slider__slider-item swiper-slide">
+							<figure class="food-slider__slider-image base-figure">
+								<img class="food-slider__slider-img" src="img/image/content/food-slide-1.png" alt="food-picture-1">
+							</figure>
+						</div>
+						<div class="food-slider__slider-item swiper-slide">
+							<figure class="food-slider__slider-image base-figure">
+								<img class="food-slider__slider-img" src="img/image/content/food-slide-2.png" alt="food-picture-1">
+							</figure>
+						</div>
+						<div class="food-slider__slider-item swiper-slide">
+							<figure class="food-slider__slider-image base-figure">
+								<img class="food-slider__slider-img" src="img/image/content/food-slide-3.png" alt="food-picture-1">
+							</figure>
+						</div>
+					</div>
+				</div>
+				<button class="food-slider__move-button move-button base-button">
+					<svg class="move-button__arrow-icon" width="15" height="63" alt="">
+						<use href="img/icon/sprite.svg#arrow-icon"></use>
+					</svg>
+				</button>
+				<div class="food-slider__slider-pagination swiper-pagination"></div>
+			</div>
+		</section>
+
 	</main>
 	<footer class="page-footer"></footer>
 	<script src="./js/index.min.js"></script>
