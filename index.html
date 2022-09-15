@@ -37,7 +37,7 @@
 					</label>
 					<label class="modal__inner-label">
 						<span class="modal__inner-desc">Ваш телефон</span>
-						<input class="modal__inner-input" type="tel" name="modalPhone" placeholder="+7 (___)___-__-__">
+						<input class="modal__inner-input" type="tel" id="modal_phone" name="modalPhone" placeholder="+1 (___)___-__-__">
 					</label>
 					<button class="modal__submit-button order-button base-button">
 						<span class="order-button__text">Забронировать</span>
@@ -126,20 +126,22 @@
 			<div class="about__container base-container">
 				<div class="about__subject">
 					<div class="about__subject-inner about__desc">
-						<h2 data-aos-duration="10000">О ресторане</h2>
-						<p data-aos-duration="10000">
-							Pipa Lounge — новое место для ценителей
-							прекрасных видом города, комфорта и изысканной кухни.
-							Из наших окон открывается живописный вид на городской ландшафт.
-							Просторный зал нашего ресторана вмещает около 150 гостей, а
-							ещё 220 могут расположиться на террасе, что делает Pipa Lounge,
-							идеальным местом для проведения незабываемых мероприятий,
-							торжеств и банкета, детского праздника или просто дружеской вечеринки.<br>
-							<br>
-							Открытый камин в центре зала поможет нашим гостям насладиться домашним уютом.
-							Любителям активного отдыха мы предложим развлечения в летней зоне под открытым
-							небом, где ваши встречи наполнятся роматическими впечатлениями.
-						</p>
+						<h2>О ресторане</h2>
+						<div class="about__subject-text">
+							<p>
+								Pipa Lounge — новое место для ценителей
+								прекрасных видом города, комфорта и изысканной кухни.
+								Из наших окон открывается живописный вид на городской ландшафт.
+								Просторный зал нашего ресторана вмещает около 150 гостей, а
+								ещё 220 могут расположиться на террасе, что делает Pipa Lounge,
+								идеальным местом для проведения незабываемых мероприятий,
+								торжеств и банкета, детского праздника или просто дружеской вечеринки.<br>
+								<br>
+								Открытый камин в центре зала поможет нашим гостям насладиться домашним уютом.
+								Любителям активного отдыха мы предложим развлечения в летней зоне под открытым
+								небом, где ваши встречи наполнятся роматическими впечатлениями.
+							</p>
+						</div>
 					</div>
 				</div>
 				<button class="about__move-button move-button base-button">
@@ -150,12 +152,14 @@
 				<div class="about__menu">
 					<div class="about__menu-inner about__desc">
 						<h2>Меню Pipa Lounge</h2>
-						<p>Меню ресторана составляют блюда изысканной кухни, с
-							большим выбором мясных блюд, приготовленных на открытом огне.
-							В распоряжении наших поваров специальная гриль-печь для
-							приготовления сочного ароматного мяса и настоящая печь для
-							приготовления пиццы.
-						</p>
+						<div class="about__menu-text">
+							<p>Меню ресторана составляют блюда изысканной кухни, с
+								большим выбором мясных блюд, приготовленных на открытом огне.
+								В распоряжении наших поваров специальная гриль-печь для
+								приготовления сочного ароматного мяса и настоящая печь для
+								приготовления пиццы.
+							</p>
+						</div>
 						<div class="about__menu-links">
 							<a class="about__menu-link order-button base-link" href="#">
 								<span class="order-button__text">Основное меню</span>
@@ -211,6 +215,55 @@
 					</svg>
 				</button>
 				<div class="food-slider__slider-pagination swiper-pagination"></div>
+			</div>
+		</section>
+
+		<section class="contacts">
+			<div class="contacts__container base-container">
+				<div class="contacts__info">
+					<div class="contacts__info-inner">
+						<h2 class="contacts__info-title base-title">Контакты Pipa Lounge</h2>
+						<ul class="contacts__info-list base-list">
+							<li class="contacts__info-item">
+								<svg class="contacts__info-icon" width="20" height="20" alt="">
+									<use href="img/icon/sprite.svg#phone-icon"></use>
+								</svg>
+								<a class="contacts__info-link base-link" href="tel:+17867881000">+17867881000</a>
+							</li>
+							<li class="contacts__info-item">
+								<svg class="contacts__info-icon" width="17" height="20" alt="">
+									<use href="img/icon/sprite.svg#map-icon"></use>
+								</svg>
+								<span class="contacts__info-text">
+									323 Sunny isles blvd 104, Sunny isles beach FL, 33160
+								</span>
+							</li>
+							<li class="contacts__info-item">
+								<svg class="contacts__info-icon" width="21" height="21" alt="">
+									<use href="img/icon/sprite.svg#time-icon"></use>
+								</svg>
+								<span class="contacts__info-text">
+									SU - TH 5pm-12am<br>
+									FR - SA 5pm-2am
+								</span>
+							</li>
+						</ul>
+						<div class="contacts__info-links">
+							<a class="contacts__links-opentable base-link" href="#">Ссылка на opentable</a>
+							<ul class="contacts__links-list base-list">
+								<li class="contacts__links-item"><img class="contacts__links-img" src="img/image/content/socials-1.svg" width="30" height="30" alt=""></li>
+								<li class="contacts__links-item"><img class="contacts__links-img" src="img/image/content/socials-2.svg" width="30" height="30" alt=""></li>
+								<li class="contacts__links-item"><img class="contacts__links-img" src="img/image/content/socials-3.svg" width="30" height="30" alt=""></li>
+							</ul>
+						</div>
+						<button class="contacts__order-button order-button base-button">
+							<span class="order-button__text">Забронировать</span>
+						</button>
+					</div>
+				</div>
+				<div class="contacts__map">
+					<iframe class="contacts__map-inner" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3588.1420197271937!2d-80.1270204639762!3d25.93056118655225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9ad1a2772460d%3A0x4cdc4ee489089ae9!2s323%20Sunny%20Isles%20Blvd%20%23104%2C%20Sunny%20Isles%20Beach%2C%20FL%2033160%2C%20%D0%A1%D0%A8%D0%90!5e0!3m2!1sru!2sru!4v1663235069722!5m2!1sru!2sru" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
 			</div>
 		</section>
 
