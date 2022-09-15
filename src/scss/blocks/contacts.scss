@@ -11,12 +11,16 @@
     justify-content: center;
 
     padding: 50px 0 80px 0;
+
+    @include mixins.respond-to(mobileOnly) {
+      flex-direction: column;
+    }
   }
 
   &__info {
     position: absolute;
-    top: 85px;
-    left: 60px;
+    top: 50px;
+    left: 0;
 
     width: 450px;
     height: 540px;
@@ -26,6 +30,17 @@
     box-shadow: 0px 16px 51px rgba(0, 0, 0, 0.11);
 
     padding: 20px;
+
+    @include mixins.respond-to(mobileOnly) {
+      position: relative;
+      top: auto;
+      left: auto;
+
+      width: 100%;
+      height: auto;
+
+      padding: 10px;
+    }
   }
 
   &__info-inner {
@@ -33,16 +48,161 @@
     height: 100%;
     border: 1px solid var(--color-domino);
     border-radius: 20px;
+
+    color: white;
+
     padding: 55px 75px 35px 60px;
+
+    @include mixins.respond-to(mobileOnly) {
+      padding: 10px;
+    }
+  }
+
+  &__info-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: var(--color-domino);
+
+    margin: 0 0 35px 0;
+  }
+
+  &__info-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin: 0 0 40px 0;
+  }
+
+  &__info-item {
+    position: relative;
+
+    padding: 0 0 0 30px;
+    margin: 0 0 20px 0;
+
+    &:last-of-type {
+      margin: 0;
+    }
+
+    &--phone {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 18px;
+        height: 18px;
+        background: url("../img/image/design/icon-phone.svg");
+        background-size: 18px 18px;
+        background-position: center;
+        background-repeat: none;
+      }
+    }
+
+    &--map {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 16px;
+        height: 19px;
+        background: url("../img/image/design/icon-map.svg");
+        background-size: 16px 19px;
+        background-position: center;
+        background-repeat: none;
+      }
+    }
+
+    &--time {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 20px;
+        height: 20px;
+        background: url("../img/image/design/icon-time.svg");
+        background-size: 20px 20px;
+        background-position: center;
+        background-repeat: none;
+      }
+    }
+  }
+
+  &__info-link {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--color-mercury);
+  }
+
+  &__info-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--color-mercury);
+  }
+
+  &__info-links {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 0 40px 0;
+  }
+
+  &__links-opentable {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--color-mercury);
+
+    margin: 0 0 20px 0;
+  }
+
+  &__links-list {
+    display: flex;
+  }
+
+  &__links-item {
+    border-radius: 3px;
+    margin: 0 20px 0 0;
+
+    transition: 0.1s;
+    
+    &:hover {
+      transform: scale(1.2);
+      transition: all 0.1s;
+    }
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  &__links-wrapper {
+
   }
 
   &__map {
     width: 100%;
     height: 550px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
   }
 
   &__map-inner {
     width: 100%;
     height: 550px;
+    border-radius: 20px;
+  }
+
+  &__order-button {
+    width: 250px;
+    height: 55px;
   }
 }

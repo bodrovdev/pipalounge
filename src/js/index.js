@@ -7,18 +7,28 @@ let desc_buttons = document.querySelectorAll('.about__desc > div');
 
 desc_text.forEach((element) => {
   element.setAttribute('data-aos', 'fade-left');
-  element.setAttribute('data-aos-duration', '500');
+  element.setAttribute('data-aos-duration', '1500');
+  element.setAttribute('data-aos-delay', '5');
 })
 
 desc_title.forEach((element) => {
   element.setAttribute('data-aos', 'fade-right');
-  element.setAttribute('data-aos-duration', '500');
+  element.setAttribute('data-aos-duration', '1500');
+  element.setAttribute('data-aos-delay', '5');
 })
 
 desc_buttons.forEach((element) => {
   element.setAttribute('data-aos', 'fade-up');
-  element.setAttribute('data-aos-duration', '500');
+  element.setAttribute('data-aos-duration', '1500');
+  element.setAttribute('data-aos-delay', '5');
 })
+
+//Анимация в блоке contacts
+let contacts_desc = document.getElementById('contacts_info');
+contacts_desc.setAttribute('data-aos', 'fade-right');
+contacts_desc.setAttribute('data-aos-duration', '1500');
+contacts_desc.setAttribute('data-aos-delay', '5');
+
 
 //Открытие и закрытие модального окна
 let modal = document.getElementById('modal');
