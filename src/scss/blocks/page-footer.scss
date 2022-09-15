@@ -1,3 +1,23 @@
+@use "../mixins";
+
 .page-footer {
   flex-shrink: 0;
-}
+
+  background-color: var(--color-cod-gray);
+
+  &__underline-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 0 20px 0;
+  }
+
+  &__underline-madeby {
+
+  }
+
+  &__underline-madeby-icon {
+    background-color: var(--color-dorado);
+  }
+ }
