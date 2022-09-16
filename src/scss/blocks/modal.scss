@@ -76,11 +76,6 @@
 
       transition: all 0.1s;
     }
-
-    @include mixins.respond-to(mobileOnly) {
-      width: 10px;
-      height: 10px;
-    }
   }
 
   &__close-inner {

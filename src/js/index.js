@@ -1,5 +1,32 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
+//Мобильное меню
+let burger = document.getElementById('burger');
+let mobileMenu = document.getElementById('mobile-menu');
+let navLinks = document.querySelectorAll('.main-nav__menu-link');
+
+burger.addEventListener('click', () => {
+  burger.classList.toggle('main-nav__burger--active');
+  mobileMenu.classList.toggle('main-nav__mobile-menu--active');
+
+  if (burger.classList.contains('main-nav__burger--active')) {
+    disableBodyScroll(mobileMenu);
+  }
+  else {
+    enableBodyScroll(mobileMenu);
+  }
+})
+
+navLinks.forEach((element) => {
+  element.addEventListener('click', () => {
+    if (mobileMenu.classList.contains('main-nav__mobile-menu--active')) {
+      mobileMenu.classList.remove('main-nav__mobile-menu--active');
+      burger.classList.remove('main-nav__burger--active');
+      enableBodyScroll(mobileMenu);
+    }
+  })
+})
+
 //Анимация для текста и заголовков в блоках описания
 let desc_text = document.querySelectorAll('.about__desc > p');
 let desc_title = document.querySelectorAll('.about__desc > h2');
@@ -24,18 +51,18 @@ desc_buttons.forEach((element) => {
 })
 
 //Анимация в блоке contacts
-let contacts_desc = document.getElementById('contacts_info');
+let contacts_desc = document.getElementById('contacts_info_inner');
 contacts_desc.setAttribute('data-aos', 'fade-right');
 contacts_desc.setAttribute('data-aos-duration', '1000');
 contacts_desc.setAttribute('data-aos-delay', '4');
 
 //Смена положения блока с информацией в блоке contacts
 let contacts_desc_move = document.getElementById('contacts_info_move');
+let contacts_info = document.getElementById('contacts_info');
 contacts_desc_move.addEventListener('click', () => {
   contacts_desc_move.classList.toggle('contacts__info-move--right');
-  contacts_desc.classList.toggle('contacts__info--right');
+  contacts_info.classList.toggle('contacts__info--right');
 })
-
 
 //Открытие и закрытие модального окна
 let modal = document.getElementById('modal');
