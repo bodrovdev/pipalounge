@@ -21,7 +21,6 @@
   }
 
   &__logo-block {
-    margin: 0 165px 0 0;
 
     &:focus-visible {
       outline: 3px solid var(--color-geebung);
@@ -36,6 +35,14 @@
 
     @include mixins.respond-to(tabletOnly) {
       margin: 0 0 50px 0;
+    }
+
+    @include mixins.respond-to(desktopS) {
+      margin: 0 50px 0 0;
+    }
+
+    @include mixins.respond-to(desktopD) {
+      margin: 0 165px 0 0;
     }
   }
 
@@ -134,6 +141,14 @@
       outline-offset: 5px;
 
       transition: all 0.1s;
+    }
+
+    @include mixins.respond-to(desktopS) {
+      font-size: 20px;
+    }
+    
+    @include mixins.respond-to(desktopD) {
+      font-size: 22px;
     }
   }
 }
