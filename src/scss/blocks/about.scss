@@ -24,6 +24,7 @@
     background: var(--color-asphalt);
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.4);
     border-radius: 25px;
+    scroll-margin-top: 20px;
 
     margin-bottom: 30px;
 
@@ -142,6 +143,7 @@
     background: var(--color-asphalt);
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.4);
     border-radius: 25px;
+    scroll-margin-top: 20px;
 
     @include mixins.respond-to(mobileOnly) {
       width: 100%;

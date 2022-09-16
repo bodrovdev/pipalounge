@@ -40,21 +40,21 @@
 		</div>
 	</section>
 
-	<header class="page-header">
+	<header class="page-header" id="header">
 		<nav class="main-nav">
 			<div class="main-nav__container base-container">
 				<ul class="main-nav__mobile-menu base-list" id="mobile-menu">
 					<li class="main-nav__menu-item">
-						<a class="main-nav__menu-link base-link" href="#">о ресторане</a>
+						<a class="main-nav__menu-link base-link" href="#subject">о ресторане</a>
 					</li>
 					<li class="main-nav__menu-item">
-						<a class="main-nav__menu-link base-link" href="#">меню</a>
+						<a class="main-nav__menu-link base-link" href="#menu">меню</a>
 					</li>
 					<li class="main-nav__menu-item main-nav__menu-item--desktop-hidden">
-						<a class="main-nav__menu-link base-link" href="#">галерея</a>
+						<a class="main-nav__menu-link base-link" href="#slider">галерея</a>
 					</li>
 					<li class="main-nav__menu-item main-nav__menu-item--desktop-hidden">
-						<a class="main-nav__menu-link base-link" href="#">контакты</a>
+						<a class="main-nav__menu-link base-link" href="#contacts_info">контакты</a>
 					</li>
 				</ul>
 				<a class="main-nav__logo-block base-link" href="#">
@@ -64,16 +64,16 @@
 				</a>
 				<ul class="main-nav__nav-list base-list">
 					<li class="main-nav__nav-item main-nav__menu-item--desktop-hidden">
-						<a class="main-nav__menu-link base-link" href="#">о ресторане</a>
+						<a class="main-nav__menu-link base-link" href="#subject">о ресторане</a>
 					</li>
 					<li class="main-nav__nav-item main-nav__menu-item--desktop-hidden">
-						<a class="main-nav__menu-link base-link" href="#">меню</a>
+						<a class="main-nav__menu-link base-link" href="#menu">меню</a>
 					</li>
 					<li class="main-nav__nav-item">
-						<a class="main-nav__menu-link base-link" href="#">галерея</a>
+						<a class="main-nav__menu-link base-link" href="#slider">галерея</a>
 					</li>
 					<li class="main-nav__nav-item">
-						<a class="main-nav__menu-link base-link" href="#">контакты</a>
+						<a class="main-nav__menu-link base-link" href="#contacts_info">контакты</a>
 					</li>
 				</ul>
 				<button class="main-nav__burger base-button" id="burger">
@@ -108,7 +108,7 @@
 			</div>
 		</section>
 
-		<section class="about" data-anchor="about">
+		<section class="about">
 			<div class="about__container base-container">
 				<div class="about__subject" id="subject">
 					<div class="about__subject-inner about__desc">
@@ -208,46 +208,53 @@
 			<div class="contacts__container base-container">
 				<div class="contacts__info" id="contacts_info">
 					<div class="contacts__info-inner">
+						<button class="contacts__info-move base-button" id="contacts_info_move">
+							<svg class="contacts__arrow-icon" width="10" height="35" alt="">
+								<use href="img/icon/sprite.svg#arrow-icon"></use>
+							</svg>
+						</button>
 						<h2 class="contacts__info-title base-title">Контакты Pipa Lounge</h2>
-						<ul class="contacts__info-list base-list">
-							<li class="contacts__info-item contacts__info-item--phone">
-								<a class="contacts__info-link base-link" href="tel:+17867881000">+17867881000</a>
-							</li>
-							<li class="contacts__info-item contacts__info-item--map">
-								<span class="contacts__info-text">
-									323 Sunny isles blvd 104, Sunny isles beach FL, 33160
-								</span>
-							</li>
-							<li class="contacts__info-item contacts__info-item--time">
-								<span class="contacts__info-text">
-									SU - TH 5pm-12am<br>
-									FR - SA 5pm-2am
-								</span>
-							</li>
-						</ul>
-						<div class="contacts__info-links">
-							<a class="contacts__links-opentable base-link" href="#">Ссылка на opentable</a>
-							<ul class="contacts__links-list base-list">
-								<li class="contacts__links-item">
-									<a class="contacts__links-wrapper base-link" href="#">
-										<img class="contacts__links-img" src="img/image/content/socials-1.svg" width="30" height="30" alt="">
-									</a>
+						<div class="contacts__info-scroller">
+							<ul class="contacts__info-list base-list">
+								<li class="contacts__info-item contacts__info-item--phone">
+									<a class="contacts__info-link base-link" href="tel:+17867881000">+17867881000</a>
 								</li>
-								<li class="contacts__links-item">
-									<a class="contacts__links-wrapper base-link" href="#">
-										<img class="contacts__links-img" src="img/image/content/socials-2.svg" width="30" height="30" alt="">
-									</a>
+								<li class="contacts__info-item contacts__info-item--map">
+									<span class="contacts__info-text">
+										323 Sunny isles blvd 104, Sunny isles beach FL, 33160
+									</span>
 								</li>
-								<li class="contacts__links-item">
-									<a class="contacts__links-wrapper base-link" href="#">
-										<img class="contacts__links-img" src="img/image/content/socials-3.svg" width="30" height="30" alt="">
-									</a>
+								<li class="contacts__info-item contacts__info-item--time">
+									<span class="contacts__info-text">
+										SU - TH 5pm-12am<br>
+										FR - SA 5pm-2am
+									</span>
 								</li>
 							</ul>
+							<div class="contacts__info-links">
+								<a class="contacts__links-opentable base-link" href="#">Ссылка на opentable</a>
+								<ul class="contacts__links-list base-list">
+									<li class="contacts__links-item">
+										<a class="contacts__links-wrapper base-link" href="#">
+											<img class="contacts__links-img" src="img/image/content/socials-1.svg" width="30" height="30" alt="">
+										</a>
+									</li>
+									<li class="contacts__links-item">
+										<a class="contacts__links-wrapper base-link" href="#">
+											<img class="contacts__links-img" src="img/image/content/socials-2.svg" width="30" height="30" alt="">
+										</a>
+									</li>
+									<li class="contacts__links-item">
+										<a class="contacts__links-wrapper base-link" href="#">
+											<img class="contacts__links-img" src="img/image/content/socials-3.svg" width="30" height="30" alt="">
+										</a>
+									</li>
+								</ul>
+							</div>
+							<button class="contacts__order-button order-button base-button" id="open-modal">
+								<span class="order-button__text">Забронировать</span>
+							</button>
 						</div>
-						<button class="contacts__order-button order-button base-button" id="open-modal">
-							<span class="order-button__text">Забронировать</span>
-						</button>
 					</div>
 				</div>
 				<div class="contacts__map" id="contacts_map">
@@ -260,15 +267,15 @@
 	<footer class="page-footer">
 		<section class="footer-main">
 			<div class="footer-main__container base-container">
-				<a class="footer-main__logo-block base-link" href="#">
+				<a class="footer-main__logo-block base-link" href="#header">
 					<figure class="footer-main__logo-image base-figure">
 						<img class="footer-main__logo-img" src="img/image/design/logo.svg" width="141" height="174" alt="website logo">
 					</figure>
 				</a>
 				<ul class="footer-main__nav-list base-list">
-					<li class="footer-main__nav-item"><a class="footer-main__nav-link base-link" id="open-modal">забронировать</a></li>
-					<li class="footer-main__nav-item"><a class="footer-main__nav-link base-link" href="#">о ресторане</a></li>
-					<li class="footer-main__nav-item"><a class="footer-main__nav-link base-link" href="#">меню</a></li>
+					<li class="footer-main__nav-item"><button class="footer-main__nav-link base-button" type="button" id="open-modal">забронировать</button></li>
+					<li class="footer-main__nav-item"><a class="footer-main__nav-link base-link" href="#subject">о ресторане</a></li>
+					<li class="footer-main__nav-item"><a class="footer-main__nav-link base-link" href="#menu">меню</a></li>
 				</ul>
 			</div>
 		</section>

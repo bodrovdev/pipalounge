@@ -52,6 +52,7 @@
     overflow: hidden;
     cursor: pointer;
 
+    font-family: var(--font-family-default);
     font-weight: 500;
     font-size: 22px;
     line-height: 27px;
@@ -60,7 +61,7 @@
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: var(--color-white);
 
-    transition: 0.3s;
+    transition: 0.1s;
 
     z-index: 2;
 
@@ -83,6 +84,13 @@
       left: 0;
 
       transition: all 0.3s;
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--color-geebung);
+      outline-offset: 5px;
+
+      transition: all 0.1s;
     }
   }
 }
