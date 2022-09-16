@@ -27,6 +27,14 @@ navLinks.forEach((element) => {
   })
 })
 
+//Анимация для кнопок
+let move_buttons = document.querySelectorAll('.move-button');
+move_buttons.forEach((element) => {
+  element.setAttribute('data-aos', 'fade-up');
+  element.setAttribute('data-aos-duration', '500');
+  element.setAttribute('data-aos-delay', '2');
+});
+
 //Анимация для текста и заголовков в блоках описания
 let desc_text = document.querySelectorAll('.about__desc > p');
 let desc_title = document.querySelectorAll('.about__desc > h2');

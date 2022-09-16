@@ -2,6 +2,8 @@
 
 .about {
   background-color: var(--color-westar);
+  overflow: hidden;
+  
   padding: 95px 0 30px 0;
 
   @include mixins.respond-to(mobileOnly) {

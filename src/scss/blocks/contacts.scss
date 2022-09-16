@@ -81,8 +81,8 @@
 
     @include mixins.respond-to(desktopD) {
       position: absolute;
-      top: 50px;
-      left: 0;
+      top: 85px;
+      left: 60px;
   
       width: 450px;
       height: 560px;
@@ -95,7 +95,7 @@
 
   &__info--right {
     left: auto;
-    right: 0;
+    right: 60px;
 
     transition: all 0.3s;
   }
@@ -178,7 +178,7 @@
     }
 
     @include mixins.respond-to(desktopD) {
-      display: block;
+      display: flex;
     }
   }
 

@@ -24,4 +24,8 @@ const food__slider = new Swiper('.food-slider__slider', {
   },
 
   effect: "fade",
+
+  autoplay: {
+    delay: 5000,
+  },
 });
