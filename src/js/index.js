@@ -71,18 +71,30 @@ desc_buttons.forEach((element) => {
 })
 
 //Анимация в блоке contacts
-let contacts_desc = document.getElementById('contacts_info_inner');
+let contacts_desc = document.getElementById('contacts_info');
 contacts_desc.setAttribute('data-aos', 'fade-right');
 contacts_desc.setAttribute('data-aos-duration', '1000');
 contacts_desc.setAttribute('data-aos-delay', '4');
 
 //Смена положения блока с информацией в блоке contacts
-let contacts_desc_move = document.getElementById('contacts_info_move');
-let contacts_info = document.getElementById('contacts_info');
-contacts_desc_move.addEventListener('click', () => {
-  contacts_desc_move.classList.toggle('contacts__info-move--right');
-  contacts_info.classList.toggle('contacts__info--right');
+// let contacts_desc_move = document.getElementById('contacts_info_move');
+// let contacts_info = document.getElementById('contacts_info');
+// contacts_desc_move.addEventListener('click', () => {
+//   contacts_desc_move.classList.toggle('contacts__info-move--right');
+//   contacts_info.classList.toggle('contacts__info--right');
+// })
+
+//Анимация для элементов футера
+let footer_links = document.querySelectorAll('.footer-main__nav-list > li');
+let footer_logo = document.getElementById('footer_logo');
+footer_links.forEach((element) => {
+  element.setAttribute('data-aos', 'fade-up');
+  element.setAttribute('data-aos-duration', '1000');
+  element.setAttribute('data-aos-delay', '4');
 })
+footer_logo.setAttribute('data-aos', 'fade-right');
+footer_logo.setAttribute('data-aos-duration', '1000');
+footer_logo.setAttribute('data-aos-delay', '4');
 
 //Открытие и закрытие модального окна
 let modal = document.getElementById('modal');
