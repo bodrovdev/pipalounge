@@ -33,7 +33,7 @@ let nav_logo = document.getElementById('nav_logo');
 let heading_title = document.getElementById('heading_title');
 let heading_button = document.getElementsByClassName('heading__info-button');
 
-window.addEventListener('load', () => {
+function animateHead() {
   nav_links.forEach((element) => {
     element.classList.add('main-nav__menu-link--loaded');
   });
@@ -45,7 +45,13 @@ window.addEventListener('load', () => {
   for (let element of heading_button) {
     element.classList.add('heading__info-button--loaded');
   }
-})
+}
+
+function timeFunction() {
+  setTimeout(animateHead, 500);
+}
+
+timeFunction();
 
 //Анимация для текста и заголовков в блоках описания
 let desc_text = document.querySelectorAll('.about__desc > div');
