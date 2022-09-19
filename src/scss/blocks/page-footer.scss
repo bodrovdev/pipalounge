@@ -53,10 +53,12 @@
     @include mixins.respond-to(tabletOnly) {
       margin: 0 0 30px 0;
     }
-  }
 
-  @media (min-width: 1800px) {
-    &__underline-link {
+    @include mixins.respond-to(desktopS) {
+      margin: 0 100px 0 0;
+    }
+
+    @include mixins.respond-to(desktopD) {
       margin: 0 170px 0 0;
 
       &:nth-child(2) {
@@ -68,12 +70,6 @@
       }
     }
   }
-
-  // @media only screen
-  // and (min-device-width: 320px)
-  // and (max-device-width: 480px) {
-
-  // }
 
   &__underline-madeby {
 

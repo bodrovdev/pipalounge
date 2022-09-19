@@ -26,5 +26,6 @@ const food__slider = new Swiper('.food-slider__slider', {
   },
   pagination: {
     el: '.swiper-pagination',
+    clickable: true,
   },
 });

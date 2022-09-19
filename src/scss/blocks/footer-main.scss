@@ -92,12 +92,18 @@
         margin: 0;
       }
     }
-  }
 
-  @media (min-width: 1800px) {
-    &__nav-item {
+    @include mixins.respond-to(desktopS) {
+      margin: 0 150px 0 0;
+  
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+
+    @include mixins.respond-to(desktopD) {
       margin: 0 190px 0 0;
-
+  
       &:last-of-type {
         margin: 0;
       }
