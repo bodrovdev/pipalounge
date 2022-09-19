@@ -27,18 +27,30 @@ navLinks.forEach((element) => {
   })
 })
 
-//Анимация для кнопок
-let move_buttons = document.querySelectorAll('.move-button');
-move_buttons.forEach((element) => {
-  element.setAttribute('data-aos', 'fade-up');
-  element.setAttribute('data-aos-duration', '500');
-  element.setAttribute('data-aos-delay', '2');
-});
+//Анимация для элементов навигации и heading
+let nav_links = document.querySelectorAll('.main-nav__menu-link');
+let nav_logo = document.getElementById('nav_logo');
+let heading_title = document.getElementById('heading_title');
+let heading_button = document.getElementsByClassName('heading__info-button');
+
+window.addEventListener('load', () => {
+  nav_links.forEach((element) => {
+    element.classList.add('main-nav__menu-link--loaded');
+  });
+
+  nav_logo.classList.add('main-nav__logo-block--loaded');
+
+  heading_title.classList.add('heading__info-title--loaded');
+
+  for (let element of heading_button) {
+    element.classList.add('heading__info-button--loaded');
+  }
+})
 
 //Анимация для текста и заголовков в блоках описания
-let desc_text = document.querySelectorAll('.about__desc > p');
+let desc_text = document.querySelectorAll('.about__desc > div');
 let desc_title = document.querySelectorAll('.about__desc > h2');
-let desc_buttons = document.querySelectorAll('.about__desc > div');
+let desc_buttons = document.querySelectorAll('.about__menu-link');
 
 desc_text.forEach((element) => {
   element.setAttribute('data-aos', 'fade-left');

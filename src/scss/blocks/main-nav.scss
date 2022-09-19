@@ -130,8 +130,11 @@
     position: relative;
 
     display: inline-block;
-
+  
+    opacity: 0;
     user-select: none;
+
+    transform: translateY(-100px);
 
     &::before {
       content: "";
@@ -174,6 +177,28 @@
       outline-offset: 5px;
 
       transition: all 0.1s;
+    }
+  }
+
+  &__logo-block--loaded {
+    animation-name: 'loaded-logo';
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes loaded-logo {
+    0% {
+      opacity: 0;
+
+      transform: translateY(-100px);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform: translateY(0);
     }
   }
 
@@ -229,6 +254,7 @@
     vertical-align: top;
     user-select: none;
     overflow: hidden;
+    opacity: 0;
 
     font-weight: 400;
     font-size: 25px;
@@ -237,7 +263,8 @@
     text-transform: uppercase;
     font-feature-settings: 'pnum' on, 'lnum' on;
 
-    transition: 0.1s;
+    transform: translateY(-100px);
+    transition: 0.3s;
 
     z-index: 2 !important;
 
@@ -250,7 +277,7 @@
       height: 100%;
       background-color: var(--color-geebung);
 
-      transition: 0.1s;
+      transition: 0.3s;
 
       z-index: -1;
 
@@ -299,6 +326,27 @@
       outline-offset: 5px;
 
       transition: all 0.1s;
+    }
+  }
+
+  &__menu-link--loaded {
+    animation-name: 'loaded-links';
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes loaded-links {
+    0% {
+      opacity: 0;
+
+      transform: translateY(-100px);
+    }
+
+    100% {
+      opacity: 1;
+
+      transform: translateY(0);
     }
   }
 
