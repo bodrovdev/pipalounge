@@ -74,7 +74,7 @@
 						<a class="main-nav__menu-link base-link" href="#contacts_info">контакты</a>
 					</li>
 				</ul>
-				<a class="main-nav__logo-block base-link" href="index.html">
+				<a class="main-nav__logo-block base-link" href="index.html" id="nav_logo">
 					<figure class="main-nav__logo-image base-figure">
 						<img class="main-nav__logo-img" src="img/image/design/logo.svg" width="141" height="174" alt="website logo">
 					</figure>
@@ -113,7 +113,7 @@
 				</div>
 			</div>
 			<div class="heading__info">
-				<h1>Приглашаем вас посетить<br> наш ресторан с<br> изысканной кухней</h1>
+				<h1 class="heading__info-title base-title" id="heading_title">Приглашаем вас посетить<br> наш ресторан с<br> изысканной кухней</h1>
 				<button class="heading__info-button order-button base-button" id="open-modal">
 					<span class="order-button__text">Забронировать</span>
 				</button>
@@ -163,14 +163,18 @@
 								приготовления пиццы.
 							</p>
 						</div>
-						<div class="about__menu-links">
-							<a class="about__menu-link order-button base-link" href="#">
-								<span class="order-button__text">Основное меню</span>
-							</a>
-							<a class="about__menu-link order-button base-link" href="#">
-								<span class="order-button__text">Винная карта</span>
-							</a>
-						</div>
+						<ul class="about__menu-links base-list">
+							<li>
+								<a class="about__menu-link order-button base-link" href="#">
+									<span class="order-button__text">Основное меню</span>
+								</a>
+							</li>
+							<li>
+								<a class="about__menu-link order-button base-link" href="#">
+									<span class="order-button__text">Винная карта</span>
+								</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 				<a class="about__move-button move-button base-link" href="#slider">
