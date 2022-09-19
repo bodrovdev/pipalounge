@@ -9,6 +9,7 @@
   &__container {
     display: flex;
     align-items: center;
+    justify-content: center;
 
     @include mixins.respond-to(mobileOnly) {
       flex-direction: column;
@@ -57,8 +58,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    width: 100%;
 
     @include mixins.respond-to(mobileOnly) {
       flex-direction: column;
