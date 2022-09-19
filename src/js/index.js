@@ -1,5 +1,9 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
+document.getElementById('subject').scrollIntoView({ 
+  behavior: 'smooth'
+});
+
 //Мобильное меню
 let burger = document.getElementById('burger');
 let mobileMenu = document.getElementById('mobile-menu');
@@ -122,3 +126,15 @@ modal.addEventListener('click', (e) => {
     enableBodyScroll(modal);
   }
 })
+
+//Плавный скроллинг до якорных ссылок
+$('a[href^="#"]').on('click', function (e) {
+  e.preventDefault();
+  
+  var id = $(this).attr('href'),
+      top = $(id).offset().top;
+
+  $('body,html').animate({
+    scrollTop: top
+  }, 2000);
+});
