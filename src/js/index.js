@@ -1,9 +1,5 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
-document.getElementById('subject').scrollIntoView({ 
-  behavior: 'smooth'
-});
-
 //Мобильное меню
 let burger = document.getElementById('burger');
 let mobileMenu = document.getElementById('mobile-menu');
