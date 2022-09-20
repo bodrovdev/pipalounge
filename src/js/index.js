@@ -129,6 +129,17 @@ modal.addEventListener('click', (e) => {
   }
 })
 
+//Смена текста в модальном окне при отправке формы
+let modalForm = document.getElementById('modalForm');
+let modalMain = document.getElementById('modalMain');
+let modalSuccess = document.getElementById('modalSuccess');
+
+modalForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  modalMain.classList.add('modal__inner--close');
+  modalSuccess.classList.add('modal__success--open');
+})
+
 //Плавный скроллинг до якорных ссылок
 $('a[href^="#"]').on('click', function (e) {
   e.preventDefault();

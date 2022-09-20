@@ -8,7 +8,7 @@
 <body>
 	<section class="modal" id="modal">
 		<div class="modal__wrapper">
-			<div class="modal__inner">
+			<div class="modal__inner" id="modalMain">
 				<button class="modal__close-button base-button" id="close-modal">
 					<div class="modal__close-inner"></div>
 				</button>
@@ -19,23 +19,26 @@
 				<form class="modal__inner-form" id="modalForm">
 					<label class="modal__inner-label">
 						<span class="modal__inner-desc">Ваше имя</span>
-						<input class="modal__inner-input" type="text" name="modalName" placeholder="Введите ваше имя">
+						<input class="modal__inner-input" type="text" name="modalName" placeholder="Введите ваше имя" required>
 					</label>
 					<label class="modal__inner-label">
 						<span class="modal__inner-desc">Ваш телефон</span>
-						<input class="modal__inner-input" type="tel" id="modal_phone" name="modalPhone" placeholder="+1 (___)___-__-__">
+						<input class="modal__inner-input" type="tel" id="modal_phone" name="modalPhone" placeholder="+1 (___)___-__-__" required>
 					</label>
 					<button class="modal__submit-button order-button base-button">
 						<span class="order-button__text">Забронировать</span>
 					</button>
 				</form>
 			</div>
-			<div class="modal__success">
+			<div class="modal__success" id="modalSuccess">
 				<button class="modal__close-button base-button" id="close-modal">
 					<div class="modal__close-inner"></div>
 				</button>
-				<h2></h2>
-				<p></p>
+				<figure class="modal__inner-image base-figure">
+					<img class="modal__inner-img" src="img/image/design/modal-img.svg" width="50" height="70" alt="">
+				</figure>
+				<h2 class="modal__success-title base-title">Спасибо за обращение!</h2>
+				<p class="modal__success-text base-par">С вами свяжутся в ближайшее время.</p>
 			</div>
 		</div>
 	</section>
