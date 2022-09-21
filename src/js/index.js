@@ -91,7 +91,7 @@ contacts_desc.setAttribute('data-aos-delay', '4');
 // })
 
 //Анимация для элементов футера
-let footer_links = document.querySelectorAll('.footer-main__nav-list > li');
+let footer_links = document.querySelectorAll('.footer-main__nav-item');
 let footer_logo = document.getElementById('footer_logo');
 footer_links.forEach((element) => {
   element.setAttribute('data-aos', 'fade-up');

@@ -404,11 +404,43 @@
     }
   }
 
+  &__links-item {
+    &:nth-child(1) a {
+      background: url("../img/image/content/socials-1.svg");
+      background-size: 30px 30px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &:nth-child(2) a {
+      background: url("../img/image/content/socials-2.svg");
+      background-size: 30px 30px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &:nth-child(3) a {
+      background: url("../img/image/content/socials-3.svg");
+      background-size: 30px 30px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
   &__links-wrapper {
     display: inline-block;
 
     width: 30px;
     height: 30px;
+
+    transition: 0.5s;
+
+    &:hover {
+      transform: rotate(360deg);
+      border-radius: 50%;
+
+      transition: all 0.5s;
+    }
 
     &:focus-visible {
       outline: 3px solid var(--color-geebung);

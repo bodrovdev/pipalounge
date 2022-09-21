@@ -16,9 +16,9 @@ const heading__slider = new Swiper('.heading__slider', {
 const food__slider = new Swiper('.food-slider__slider', {
   loop: true,
   effect: "fade",
-  speed: 2000,
+  speed: 500,
   autoplay: {
-    delay: 5000,
+    delay: 2000,
   },
   navigation: {
     nextEl: '.food-slider__slider-button--next',
