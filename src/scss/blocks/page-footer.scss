@@ -72,6 +72,8 @@
   }
 
   &__underline-madeby {
+    display: flex;
+    align-items: center;
 
     &-text {
       font-weight: 400;
@@ -79,7 +81,7 @@
       line-height: 17px;
       color: var(--color-gray);
 
-      margin: 0 5px 0 0;
+      margin: 0 10px 0 0;
     }
 
     &-icon {

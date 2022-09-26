@@ -27,68 +27,82 @@ navLinks.forEach((element) => {
   })
 })
 
-//Анимация для элементов навигации и heading
+//Анимация для элементов навигации
 let nav_links = document.querySelectorAll('.main-nav__menu-link');
 let nav_logo = document.getElementById('nav_logo');
+
+nav_links.forEach((element) => {
+  element.classList.add('main-nav__menu-link--loaded');
+});
+
+nav_logo.classList.add('main-nav__logo-block--loaded');
+
+//Анимация для элементов из блока heading
 let heading_title = document.getElementById('heading_title');
 let heading_button = document.getElementsByClassName('heading__info-button');
 
-function animateHead() {
-  nav_links.forEach((element) => {
-    element.classList.add('main-nav__menu-link--loaded');
-  });
-
-  nav_logo.classList.add('main-nav__logo-block--loaded');
-
-  heading_title.classList.add('heading__info-title--loaded');
-
-  for (let element of heading_button) {
-    element.classList.add('heading__info-button--loaded');
+function animHeading() {
+  if (heading_title === null || heading_button === null) {
+    return;
+  }
+  else {  
+    heading_title.classList.add('heading__info-title--loaded');
+  
+    for (let element of heading_button) {
+      element.classList.add('heading__info-button--loaded');
+    }
   }
 }
 
-function timeFunction() {
-  setTimeout(animateHead, 500);
-}
-
-timeFunction();
+animHeading();
 
 //Анимация для текста и заголовков в блоках описания
 let desc_text = document.querySelectorAll('.about__desc > div');
 let desc_title = document.querySelectorAll('.about__desc > h2');
 let desc_buttons = document.querySelectorAll('.about__menu-link');
 
-desc_text.forEach((element) => {
-  element.setAttribute('data-aos', 'fade-left');
-  element.setAttribute('data-aos-duration', '1000');
-  element.setAttribute('data-aos-delay', '4');
-})
+function animAbout() {
+  if (desc_text === null || desc_title === null || desc_buttons === null) {
+    return;
+  }
+  else {
+    desc_text.forEach((element) => {
+      element.setAttribute('data-aos', 'fade-left');
+      element.setAttribute('data-aos-duration', '1000');
+      element.setAttribute('data-aos-delay', '4');
+    })
+    
+    desc_title.forEach((element) => {
+      element.setAttribute('data-aos', 'fade-right');
+      element.setAttribute('data-aos-duration', '1000');
+      element.setAttribute('data-aos-delay', '4');
+    })
+    
+    desc_buttons.forEach((element) => {
+      element.setAttribute('data-aos', 'fade-up');
+      element.setAttribute('data-aos-duration', '1000');
+      element.setAttribute('data-aos-delay', '4');
+    })
+  }
+}
 
-desc_title.forEach((element) => {
-  element.setAttribute('data-aos', 'fade-right');
-  element.setAttribute('data-aos-duration', '1000');
-  element.setAttribute('data-aos-delay', '4');
-})
-
-desc_buttons.forEach((element) => {
-  element.setAttribute('data-aos', 'fade-up');
-  element.setAttribute('data-aos-duration', '1000');
-  element.setAttribute('data-aos-delay', '4');
-})
+animAbout();
 
 //Анимация в блоке contacts
 let contacts_desc = document.getElementById('contacts_info');
-contacts_desc.setAttribute('data-aos', 'fade-right');
-contacts_desc.setAttribute('data-aos-duration', '1000');
-contacts_desc.setAttribute('data-aos-delay', '4');
 
-//Смена положения блока с информацией в блоке contacts
-// let contacts_desc_move = document.getElementById('contacts_info_move');
-// let contacts_info = document.getElementById('contacts_info');
-// contacts_desc_move.addEventListener('click', () => {
-//   contacts_desc_move.classList.toggle('contacts__info-move--right');
-//   contacts_info.classList.toggle('contacts__info--right');
-// })
+function animContacts() {
+  if (contacts_desc === null) {
+    return;
+  }
+  else {
+    contacts_desc.setAttribute('data-aos', 'fade-right');
+    contacts_desc.setAttribute('data-aos-duration', '1000');
+    contacts_desc.setAttribute('data-aos-delay', '4');
+  }
+}
+
+animContacts();
 
 //Анимация для элементов футера
 let footer_links = document.querySelectorAll('.footer-main__nav-item');
@@ -139,6 +153,48 @@ modalForm.addEventListener('submit', (e) => {
   modalMain.classList.add('modal__inner--close');
   modalSuccess.classList.add('modal__success--open');
 })
+
+//Переход на другую страницу при отсутствии подходящих элементов на текущей
+function findElement() {
+  let anchorLinks = Array.from(document.querySelectorAll("a[href*='#']"))
+                    .filter(item => item.href.split('#')[1] !=='');
+
+  for (let item of anchorLinks) {
+    if (document.querySelectorAll(`a[href="${item.href.split('#')[1]}"]`) === null) {
+      item.setAttribute('href', `https://pipalounge.com/#${item.href.split('#')[1]}`);
+    }
+  }
+}
+
+findElement();
+
+// let aboutBlock = document.getElementById('subject');
+// if (aboutBlock === null) {
+//   document.querySelectorAll("a[href='#subject']").forEach((element) => {
+//     element.setAttribute('href', 'https://pipalounge.com/#subject');
+//   })
+// }
+
+// let menuBlock = document.getElementById('menu');
+// if (menuBlock === null) {
+//   document.querySelectorAll("a[href='#menu']").forEach((element) => {
+//     element.setAttribute('href', 'https://pipalounge.com/#menu');
+//   })
+// }
+
+// let galleryBlock = document.getElementById('slider');
+// if (galleryBlock === null) {
+//   document.querySelectorAll("a[href='#slider']").forEach((element) => {
+//     element.setAttribute('href', 'https://pipalounge.com/#slider');
+//   })
+// }
+
+// let contactsBlock = document.getElementById('contacts_info');
+// if (contactsBlock === null) {
+//   document.querySelectorAll("a[href='#contacts_info']").forEach((element) => {
+//     element.setAttribute('href', 'https://pipalounge.com/#contacts_info');
+//   })
+// }
 
 //Плавный скроллинг до якорных ссылок
 $('a[href^="#"]').on('click', function (e) {
