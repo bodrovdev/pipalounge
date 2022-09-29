@@ -59,7 +59,7 @@ animHeading();
 //Анимация для текста и заголовков в блоках описания
 let desc_text = document.querySelectorAll('.about__desc > div');
 let desc_title = document.querySelectorAll('.about__desc > h2');
-let desc_buttons = document.querySelectorAll('.about__menu-link');
+let desc_buttons = document.getElementById('desc_buttons');
 
 function animAbout() {
   if (desc_text === null || desc_title === null || desc_buttons === null) {
@@ -77,12 +77,10 @@ function animAbout() {
       element.setAttribute('data-aos-duration', '1000');
       element.setAttribute('data-aos-delay', '4');
     })
-    
-    desc_buttons.forEach((element) => {
-      element.setAttribute('data-aos', 'fade-up');
-      element.setAttribute('data-aos-duration', '1000');
-      element.setAttribute('data-aos-delay', '4');
-    })
+
+    desc_buttons.setAttribute('data-aos', 'fade-up');
+    desc_buttons.setAttribute('data-aos-duration', '1000');
+    desc_buttons.setAttribute('data-aos-delay', '4');
   }
 }
 
@@ -167,34 +165,6 @@ function findElement() {
 }
 
 findElement();
-
-// let aboutBlock = document.getElementById('subject');
-// if (aboutBlock === null) {
-//   document.querySelectorAll("a[href='#subject']").forEach((element) => {
-//     element.setAttribute('href', 'https://pipalounge.com/#subject');
-//   })
-// }
-
-// let menuBlock = document.getElementById('menu');
-// if (menuBlock === null) {
-//   document.querySelectorAll("a[href='#menu']").forEach((element) => {
-//     element.setAttribute('href', 'https://pipalounge.com/#menu');
-//   })
-// }
-
-// let galleryBlock = document.getElementById('slider');
-// if (galleryBlock === null) {
-//   document.querySelectorAll("a[href='#slider']").forEach((element) => {
-//     element.setAttribute('href', 'https://pipalounge.com/#slider');
-//   })
-// }
-
-// let contactsBlock = document.getElementById('contacts_info');
-// if (contactsBlock === null) {
-//   document.querySelectorAll("a[href='#contacts_info']").forEach((element) => {
-//     element.setAttribute('href', 'https://pipalounge.com/#contacts_info');
-//   })
-// }
 
 //Плавный скроллинг до якорных ссылок
 $('a[href^="#"]').on('click', function (e) {

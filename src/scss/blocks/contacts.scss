@@ -105,18 +105,18 @@
     border-radius: 20px;
 
     @include mixins.respond-to(mobileOnly) {
-      padding: 10px;
+      padding: 20px;
     }
 
     @include mixins.respond-to(tabletOnly) {
-      padding: 10px;
+      padding: 20px;
     }
 
     @include mixins.respond-to(desktopS) {
       max-width: 280px;
       height: 100%;
 
-      padding: 10px;
+      padding: 20px;
     }
 
     @include mixins.respond-to(desktopD) {
@@ -476,7 +476,22 @@
   }
 
   &__order-button {
-    width: 250px;
     height: 55px;
+
+    @include mixins.respond-to(mobileOnly) {
+      width: 100%;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      width: 250px;
+    }
+
+    @include mixins.respond-to(desktopS) {
+      width: 100%;
+    }
+
+    @include mixins.respond-to(desktopD) {
+      width: 250px;
+    }
   }
 }
